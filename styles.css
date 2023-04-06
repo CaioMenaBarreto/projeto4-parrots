@@ -51,16 +51,28 @@ main{
 .carta-jogo {
     width: calc((100% - 120px) / 6);
     height: 146px;
+    position: relative;
     background-color: #a7e9af;
     border-radius: 5px;
     border: 1px solid #99cea8;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box; /* inclui padding e border na largura */
+    box-sizing: border-box;
     margin: 10px;
     margin-bottom: 17px;
-  }
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carta-jogo.virada {
+    transform: rotateY(180deg);
+    background-color: #a7e9af;
+}
+  
+.carta-jogo.virada .papagaio {
+    transform: rotateY(180deg);
+}
 
 .papagaio{
     width: 100px;
